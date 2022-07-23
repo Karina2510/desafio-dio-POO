@@ -1,4 +1,6 @@
+import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -13,7 +15,7 @@ public class Main {
         Curso curso2 = new Curso();
         curso2.setTitulo("Curso JavaScript");
         curso2.setDescricao("Descrição: curso js");
-        curso2.setCargaHoraria(5);
+        curso2.setCargaHoraria(4);
 
         Curso curso3 = new Curso();
         curso3.setTitulo("Angular");
@@ -34,15 +36,33 @@ public class Main {
         mentoria3.setTitulo("mentoria de angular");
         mentoria3.setDescricao("professora Renan irá realizar a mentoria do curso de angular");
         mentoria3.setData(LocalDate.now());
+        
 
-        System.out.println(curso1);
-        System.out.println(mentoria1);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
 
-        System.out.println(curso2);
-        System.out.println(mentoria2);
+        Dev devKarina = new Dev();
+        devKarina.setNome("Karina");
+        devKarina.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos Karina" + devKarina.getConteudosInscritos());
+        devKarina.progredir();
+        devKarina.progredir();
+        System.out.println("Conteudos concluídos Karina" + devKarina.getConteudosConcluidos());
+        System.out.println("XP: " + devKarina.calcularTotalXp() + "\n");
 
-        System.out.println(curso3);
-        System.out.println(mentoria3);
+        Dev devDanilo = new Dev();
+        devDanilo.setNome("Danilo");
+        devDanilo.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos Danilo" + devDanilo.getConteudosInscritos());
+        devDanilo.progredir();
+        devDanilo.progredir();
+        devDanilo.progredir();
+        System.out.println("Conteudos concluídos Danilo" + devDanilo.getConteudosConcluidos());
+        System.out.println("XP: " + devDanilo.calcularTotalXp());
 
     }
 }
