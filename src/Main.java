@@ -40,7 +40,7 @@ public class Main {
 
         System.out.println(curso2);
         System.out.println(mentoria2);
-        
+
         System.out.println(curso3);
         System.out.println(mentoria3);
 
