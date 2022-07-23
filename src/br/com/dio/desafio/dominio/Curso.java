@@ -1,7 +1,7 @@
 package br.com.dio.desafio.dominio;
 
 public class Curso {
-    String titulo;
-    String descricao;
-    int cargaHoraria;
+    private String titulo;
+    private String descricao;
+    private int cargaHoraria;
 }
